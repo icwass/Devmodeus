@@ -79,13 +79,18 @@ public static class StrokeBuilder
 
         // draw texture within renderTarget
         RenderTargetHandle renderTargetHandle = new RenderTargetHandle();
-        Bounds2 bounds = Bounds2.WithCorners(bottomLeft, topRight);
+
+        // need to fix how we generate bounds and draw textures to the render target so we don't cut them off
+        // for now, we hack it so we get the whole texture
+        Vector2 debug_getBackOnScreen = new Vector2(0, 200);
+
+        Bounds2 bounds = Bounds2.WithCorners(bottomLeft, topRight + debug_getBackOnScreen);
         Index2 textureSize = bounds.Size.CeilingToInt();
         renderTargetHandle.field_2987 = textureSize;
         class_95 class95 = renderTargetHandle.method_1352(out var flag);
         if (flag)
         {
-            Vector2 origin = new Vector2(bottomLeft.X, -bottomLeft.Y); // need to invert Y so stuff actually appears in drawing target because of drawing weirdness
+            Vector2 origin = new Vector2(bottomLeft.X, -bottomLeft.Y + debug_getBackOnScreen.Y * 0.5f); // need to invert Y so stuff actually appears in drawing target because of drawing weirdness
             var scaling = 1f;
             var matrixRotateGraphic = Matrix4.method_1073(0f);
             var matrixPivotOffset = Matrix4.method_1070(Vector2.Zero.ToVector3(0f));
