@@ -28,7 +28,7 @@ public static class StrokeBuilder
         {
             // textures are arranged in a very specific order
             // that makes it simple to do look-up-table stuff
-            StrokePieces[i] = class_235.method_615("devmodeus/textures/select/stroke.array/" + i);
+            StrokePieces[i] = class_235.method_615("devmodeus/textures/select/stroke_pieces/" + i);
         }
     }
 
