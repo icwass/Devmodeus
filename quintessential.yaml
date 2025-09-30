@@ -1,0 +1,11 @@
+Name: Devmodeus
+Version: 0.0.1
+Icon: devmodeus/mod_icon
+Title: Devmodeus
+Desc: Assorted dev tools and utilities for making mods.
+DLL: "Devmodeus/bin/Debug/net452/Devmodeus.dll"
+Dependencies:
+- Name: Quintessential
+  Version: 0.5.1
+#OptionalDependencies
+#Mappings:
